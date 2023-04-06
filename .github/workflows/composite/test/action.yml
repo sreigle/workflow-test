@@ -9,5 +9,6 @@ inputs:
 runs:
   using: 'composite'
   steps:
+
     - name: Display Variables
       run: echo "Test Composite ${{input.project-url}}"
