@@ -6,8 +6,6 @@ env:
 runs:
   using: 'composite'
 
-  deploy:
-    name: Test Deploy
-    steps:
-      - name: Display Variables
-        run: echo ${{env.API_URL}}
+  steps:
+    - name: Display Variables
+      run: echo ${{env.API_URL}}
