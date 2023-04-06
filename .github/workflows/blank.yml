@@ -18,8 +18,6 @@ jobs:
   action:
     name: Action
     uses: ./.github/workflows/composite/test/action.yml
-    env:
-      API_URL: ${{var.API_URL}}
     
   # This workflow contains a single job called "build"
   build:

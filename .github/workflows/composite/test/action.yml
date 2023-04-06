@@ -2,7 +2,6 @@ name: Test Action
 
 runs:
   using: 'composite'
-
   steps:
     - name: Display Variables
       run: echo "Test Composite"
