@@ -6,7 +6,6 @@ env:
 runs:
   using: 'composite'
 
-jobs:
   deploy:
     name: Test Deploy
     steps:
