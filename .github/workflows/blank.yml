@@ -17,7 +17,7 @@ on:
 jobs:
   action:
     name: Action
-    uses: './.github/workflows/composites/action.yml'
+    uses: './.github/workflows/composite/action.yml'
     env:
       API_URL: ${{var.API_URL}}
     
