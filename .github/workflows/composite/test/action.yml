@@ -1,7 +1,13 @@
-name: Test Action
+name: Test Composite
+description: 'How do composites work?'
+
+inputs:
+  project-url:
+    required: false
+    default: './default'
 
 runs:
   using: 'composite'
   steps:
     - name: Display Variables
-      run: echo "Test Composite"
+      run: echo "Test Composite ${{input.project-url}}"
