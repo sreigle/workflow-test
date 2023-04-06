@@ -15,8 +15,9 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  action:
-    name: Action
+  composite:
+    name: Composite
+    runs-on: ubuntu-latest
     uses: ./.github/workflows/composite/test/action.yml
     
   # This workflow contains a single job called "build"
