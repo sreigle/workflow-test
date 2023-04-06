@@ -1,5 +1,11 @@
 name: Test Action
 
+env:
+  API_URL
+
+runs:
+  using: 'composite'
+
 jobs:
   deploy:
     name: Test Deploy
