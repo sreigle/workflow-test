@@ -27,6 +27,8 @@ jobs:
 
     steps:
       - name: Dump Password
+        env:
+          PASSWORD: ${{ secrets.PASSWORD }}
         run: |
           echo Password is $PASSWORD
           if [[ $PASSWORD == *"PROD"* ]]; then
