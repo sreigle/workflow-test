@@ -10,4 +10,5 @@ runs:
   using: "composite"
   steps:
     - name: Display Variables
+      shell: bash
       run: echo "Test Composite ENV"
