@@ -17,6 +17,8 @@ jobs:
   deploy-int:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+
       - name: Run Build and Upload Artifacts
         uses: ./.github/workflows/composite/print-vars
         with:
