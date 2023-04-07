@@ -14,23 +14,12 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # composite:
-  #   name: Composite
-  #   runs-on: ubuntu-latest
-  #   uses: ./.github/workflows/composite/print-vars
-
-  # This workflow contains a single job called "build"
   deploy-qa:
     name: Deploy QA
-    runs-on: ubuntu-latest
-    environment: QA
-
-    steps:
-      - name: Dump Password
-        uses: ./.github/workflows/reusable.yml
-        with:
-          environment: dev
-        secrets: inherit
+    uses: ./.github/workflows/reusable.yml
+    with:
+      environment: QA
+    secrets: inherit
 
   deploy:
     name: Deploy
