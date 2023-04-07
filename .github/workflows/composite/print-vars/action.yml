@@ -1,10 +1,10 @@
 name: Test Composite
-description: 'How do composites work?'
+description: "How do composites work?"
 
 inputs:
   env-name:
     required: false
-    default: ''./default'
+    default: "default"
 
 runs:
   using: "composite"

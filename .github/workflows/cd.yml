@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run Build and Upload Artifacts
+      - name: Run Composite
         uses: ./.github/workflows/composite/print-vars
         with:
           env-name: INT
