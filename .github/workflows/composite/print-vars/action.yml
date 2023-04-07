@@ -10,4 +10,4 @@ runs:
   using: "composite"
   steps:
     - name: Display Variables
-      run: echo "Test Composite ENV <${{input.env-name}}>"
+      run: echo "Test Composite ENV"
