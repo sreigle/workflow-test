@@ -23,16 +23,7 @@ jobs:
 
   deploy:
     name: Deploy
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Dump Password
-        env:
-          PASSWORD: ${{ secrets.PASSWORD }}
-        run: |
-          echo Password is ${{ env.PASSWORD }}
-          if [[ $PASSWORD == *"PROD"* ]]; then
-            echo "This is the QA password!"
-          else
-            echo "This is NOT the QA password!"
-          fi
+    uses: ./.github/workflows/reusable.yml
+    with:
+      environment: PRD
+    secrets: inherit
