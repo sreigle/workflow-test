@@ -23,7 +23,7 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
         run: |
           echo Password is $PASSWORD
-          if [[ $PASSWORD == *"QA"* ]]; then
+          if [[ $PASSWORD == *"PROD"* ]]; then
             echo "This is the QA password!"
           else
             echo "This is NOT the QA password!"

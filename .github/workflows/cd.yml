@@ -14,6 +14,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  deploy-int:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Build and Upload Artifacts
+        uses: ./.github/workflows/composite/print-vars
+        with:
+          env-name: INT
+
   deploy-qa:
     name: Deploy QA
     uses: ./.github/workflows/reusable.yml
