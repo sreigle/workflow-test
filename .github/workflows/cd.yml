@@ -17,6 +17,8 @@ jobs:
     name: Deploy INT
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3 # Needed to run local composite
+
       - name: Run Composite
         uses: ./.github/workflows/composite/print-vars
         with:
@@ -27,7 +29,7 @@ jobs:
     uses: ./.github/workflows/reusable.yml
     with:
       environment: QA
-    secrets: inherit
+    secrets: inherit # Passes in all secrets with in scope of this file
 
   deploy:
     name: Deploy
