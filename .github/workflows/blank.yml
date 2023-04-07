@@ -27,15 +27,10 @@ jobs:
 
     steps:
       - name: Dump Password
-        env:
-          PASSWORD: ${{ secrets.PASSWORD }}
-        run: |
-          echo Password is ${{ env.PASSWORD }}
-          if [[ $PASSWORD == *"PROD"* ]]; then
-            echo "This is the PROD password!"
-          else
-            echo "This is NOT the PROD password!"
-          fi
+        uses: ./.github/workflows/reusable.yml
+        with:
+          environment: dev
+        secrets: inherit
 
   deploy:
     name: Deploy
@@ -48,7 +43,7 @@ jobs:
         run: |
           echo Password is ${{ env.PASSWORD }}
           if [[ $PASSWORD == *"PROD"* ]]; then
-            echo "This is the PROD password!"
+            echo "This is the QA password!"
           else
-            echo "This is NOT the PROD password!"
+            echo "This is NOT the QA password!"
           fi
