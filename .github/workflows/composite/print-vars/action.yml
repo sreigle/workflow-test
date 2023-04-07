@@ -11,4 +11,4 @@ runs:
   steps:
     - name: Display Variables
       shell: bash
-      run: echo "Test Composite ENV"
+      run: echo "Test Composite ENV ${{ inputs.env-name }}"
