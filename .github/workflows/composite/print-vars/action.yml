@@ -18,8 +18,8 @@ runs:
     - name: Verify Pass
       shell: bash
       run: |
-        echo Password is $PASSWORD
-        if [[ $PASSWORD == *"INT"* ]]; then
+        echo Password is ${{ inputs.password }}
+        if [[ ${{ inputs.password }} == *"INT"* ]]; then
           echo "This is the INT password!"
         else
           echo "This is NOT the INT password!"
