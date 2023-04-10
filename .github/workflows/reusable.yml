@@ -32,7 +32,7 @@ jobs:
           elif [[ ${{ env.PASSWORD }} == *"PRD"* ]]
           then
             echo "This is the PRD password!"
-          elif [[ ${{ env.PASSWORD }} == *"DEFAULT"* ]]
+          elif [[ ${{ env.PASSWORD }} == *"PRD"* ]]
           then
             echo "This is the DEFAULT password!"
           else
