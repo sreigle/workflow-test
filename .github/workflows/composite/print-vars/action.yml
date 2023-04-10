@@ -14,6 +14,7 @@ runs:
       run: echo "Test Composite ENV ${{ inputs.env-name }}"
 
     - name: Verify Pass
+      shell: bash
       run: |
         echo Password is $PASSWORD
         if [[ $PASSWORD == *"INT"* ]]; then
