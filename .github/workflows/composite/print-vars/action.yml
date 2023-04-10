@@ -15,7 +15,7 @@ runs:
       shell: bash
       run: echo "Test Composite ENV ${{ inputs.env-name }}"
 
-    - name: Verify Pass
+    - name: Verify INT Password
       shell: bash
       run: |
         echo Password is ${{ inputs.password }}
