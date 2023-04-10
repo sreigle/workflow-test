@@ -38,4 +38,3 @@ jobs:
     uses: ./.github/workflows/reusable.yml
     with:
       environment: PRD
-    secrets: inherit
