@@ -19,10 +19,22 @@ jobs:
 
     steps:
       - name: Dump Password
+        env:
+          PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          echo Password is ${{ secrets.PASSWORD }}
-          if [[ ${{ secrets.PASSWORD }} == *"QA"* ]]; then
+          echo Password is ${{ env.PASSWORD }}
+          if [[ ${{ env.PASSWORD }} == *"INT"* ]]
+          then
+            echo "This is the INT password!"
+          elif [[ ${{ env.PASSWORD }} == *"QA"* ]]
+          then
             echo "This is the QA password!"
+          elif [[ ${{ env.PASSWORD }} == *"PRD"* ]]
+          then
+            echo "This is the PRD password!"
+          elif [[ ${{ env.PASSWORD }} == *"DEFAULT"* ]]
+          then
+            echo "This is the DEFAULT password!"
           else
-            echo "This is NOT the QA password!"
+            echo "This is NOT a stored password!"
           fi
