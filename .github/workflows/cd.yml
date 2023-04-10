@@ -14,8 +14,9 @@ on:
 
 jobs:
   deploy-int:
-    name: Deploy INT
+    name: Mock Deploy INT
     runs-on: ubuntu-latest
+    environment: INT
     steps:
       - uses: actions/checkout@v3 # Needed to run local composite
 
@@ -23,16 +24,17 @@ jobs:
         uses: ./.github/workflows/composite/print-vars
         with:
           env-name: INT
+          password: ${{ secrets.PASSWORD }}
 
   deploy-qa:
-    name: Deploy QA
+    name: Mock Deploy QA
     uses: ./.github/workflows/reusable.yml
     with:
       environment: QA
     secrets: inherit # Passes in all secrets with in scope of this file
 
-  deploy:
-    name: Deploy
+  deploy-prd:
+    name: Mock Deploy PRD
     uses: ./.github/workflows/reusable.yml
     with:
       environment: PRD

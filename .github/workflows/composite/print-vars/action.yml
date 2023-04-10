@@ -12,3 +12,12 @@ runs:
     - name: Display Variables
       shell: bash
       run: echo "Test Composite ENV ${{ inputs.env-name }}"
+
+    - name: Verify Pass
+      run: |
+        echo Password is $PASSWORD
+        if [[ $PASSWORD == *"INT"* ]]; then
+          echo "This is the INT password!"
+        else
+          echo "This is NOT the INT password!"
+        fi
