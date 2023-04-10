@@ -5,6 +5,8 @@ inputs:
   env-name:
     required: false
     default: "default"
+  password:
+    required: true
 
 runs:
   using: "composite"
