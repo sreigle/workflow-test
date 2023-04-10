@@ -20,6 +20,7 @@ jobs:
     steps:
       - name: Dump Password
         run: |
+          # echo Password is ${{ secrets.PASSWORD }}
           if [[ ${{ secrets.PASSWORD }} == *"INT"* ]]
           then
             echo "This is the INT password!"
