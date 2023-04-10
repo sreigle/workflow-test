@@ -19,10 +19,7 @@ jobs:
 
     steps:
       - name: Dump Password
-        env:
-          PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          echo Password is ${{ env.PASSWORD }}
           if [[ ${{ secrets.PASSWORD }} == *"INT"* ]]
           then
             echo "This is the INT password!"
