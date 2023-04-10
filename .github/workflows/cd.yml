@@ -31,9 +31,11 @@ jobs:
     uses: ./.github/workflows/reusable.yml
     with:
       environment: QA
+    secrets: inherit # Passes in all secrets with in scope of this file
 
   deploy-prd:
     name: Mock Deploy PRD
     uses: ./.github/workflows/reusable.yml
     with:
       environment: PRD
+    secrets: inherit
