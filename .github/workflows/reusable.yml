@@ -23,16 +23,16 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
         run: |
           echo Password is ${{ env.PASSWORD }}
-          if [[ ${{ env.PASSWORD }} == *"INT"* ]]
+          if [[ ${{ secrets.PASSWORD }} == *"INT"* ]]
           then
             echo "This is the INT password!"
-          elif [[ ${{ env.PASSWORD }} == *"QA"* ]]
+          elif [[ ${{ secrets.PASSWORD }} == *"QA"* ]]
           then
             echo "This is the QA password!"
-          elif [[ ${{ env.PASSWORD }} == *"PRD"* ]]
+          elif [[ ${{ secrets.PASSWORD }} == *"PRD"* ]]
           then
             echo "This is the PRD password!"
-          elif [[ ${{ env.PASSWORD }} == *"PRD"* ]]
+          elif [[ ${{ secrets.PASSWORD }} == *"DEFAULT"* ]]
           then
             echo "This is the DEFAULT password!"
           else
