@@ -19,8 +19,8 @@ runs:
       shell: bash
       run: echo "env-name -- ${{ inputs.env-name }}"
 
-    # - name: Display Vars
-    #   run: echo "ENV_CHECK -- ${{ vars.ENV_CHECK }}"
+    - name: Display Vars
+      run: echo "ENV_CHECK -- ${{ vars.ENV_CHECK }}"
 
     - name: Verify Password
       shell: bash
