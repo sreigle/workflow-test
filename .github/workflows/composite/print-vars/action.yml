@@ -11,16 +11,30 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Display Variables
+    defaults:
       shell: bash
-      run: echo "Test Composite ENV ${{ inputs.env-name }}"
 
-    - name: Verify INT Password
-      shell: bash
+    - name: Display Input
+      run: echo "env-name -- ${{ inputs.env-name }}"
+
+    - name: Display Vars
+      run: echo "ENV_CHECK -- ${{ vars.ENV_CHECK }}"
+
+    - name: Verify Password
       run: |
-        echo Password is ${{ inputs.password }}
-        if [[ ${{ inputs.password }} == *"INT"* ]]; then
-          echo "This is the INT password!"
-        else
-          echo "This is NOT the INT password!"
-        fi
+          # echo Password is ${{ inputs.password }}
+          if [[ ${{ inputs.password }} == *"INT"* ]]
+          then
+            echo "This is the INT password!"
+          elif [[ ${{ inputs.password }} == *"QA"* ]]
+          then
+            echo "This is the QA password!"
+          elif [[ ${{ inputs.password }} == *"PRD"* ]]
+          then
+            echo "This is the PRD password!"
+          elif [[ ${{ inputs.password }} == *"DEFAULT"* ]]
+          then
+            echo "This is the DEFAULT password!"
+          else
+            echo "This is NOT a stored password!"
+          fi

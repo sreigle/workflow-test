@@ -36,3 +36,6 @@ jobs:
           else
             echo "This is NOT a stored password!"
           fi
+
+      - name: Dump Var
+        run: echo ${{ vars.ENV_CHECK }}
