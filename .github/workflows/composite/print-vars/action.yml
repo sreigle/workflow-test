@@ -12,7 +12,8 @@ runs:
   using: "composite"
   steps:
     defaults:
-      shell: bash
+      run:
+        shell: bash
 
     - name: Display Input
       run: echo "env-name -- ${{ inputs.env-name }}"
