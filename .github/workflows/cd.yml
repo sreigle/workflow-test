@@ -12,6 +12,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  PROJECT_NAME: "workflow-test"
+
 jobs:
   deploy-int:
     name: Mock Deploy INT

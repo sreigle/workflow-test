@@ -15,6 +15,10 @@ runs:
       shell: bash
       run: echo "env-name -- ${{ inputs.env-name }}"
 
+    - name: Display ENV
+      shell: bash
+      run: echo "Project Name -- ${{ env.PROJECT_NAME }}"
+
     - name: Verify Password
       shell: bash
       run: |
