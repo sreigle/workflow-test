@@ -39,3 +39,7 @@ jobs:
 
       - name: Dump Var
         run: echo ${{ vars.ENV_CHECK }}
+
+      - name: Display ENV
+        shell: bash
+        run: echo "Project Name -- ${{ env.PROJECT_NAME }}"
